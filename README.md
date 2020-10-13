@@ -11,9 +11,9 @@ This program is an encryption machine written in Python 3.8.
 
 ## About The Project
 A program that simulates the functionality of the Enigma Machine used in the WW2: <br />
-<br /><br /><br /><br /><br /><br /><br /><br />-Plug Board <br />
-<br /><br /><br /><br /><br /><br /><br /><br />-Rotors (it has been used 3) <br />
-<br /><br /><br /><br /><br /><br /><br /><br />-Reflector <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Plug Board <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Rotors (it has been used 3) <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Reflector <br />
 <br />
 Furthermore, is has a user friendly UI and drag and drop functionality to change the rotors 
 
