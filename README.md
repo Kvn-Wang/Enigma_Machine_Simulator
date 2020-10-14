@@ -1,5 +1,5 @@
 # Enigma_Machine_Simulator
-![](https://github.com/Kevin9000/Utilities/blob/master/Projects_gif/Fallingball.gif) <br />
+![]() <br />
 This program is an encryption machine written in Python 3.8.    
 
 ## Table of Contents
