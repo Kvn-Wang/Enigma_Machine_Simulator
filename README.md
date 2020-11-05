@@ -1,5 +1,5 @@
 # Enigma_Machine_Simulator
-![]() <br />
+![](https://github.com/Wang-Kevin900/Utilities/blob/master/Projects_gif/Enigma_machine.gif) <br />
 This program is an encryption machine written in Python 3.8.    
 
 ## Table of Contents
