@@ -88,30 +88,34 @@ class DragManager:
         x, y = event.widget.winfo_pointerxy()
         target = event.widget.winfo_containing(x, y)
 
-        # if the cursor is on top of these frame that correspond to the 3 rotors,
-        # show the add image that means that the user can drop the label on them
-        if target.winfo_parent() == self.first_rotor_frame_name or target.winfo_parent() == self.second_rotor_frame_name \
-                or target.winfo_parent() == self.third_rotor_frame_name:
-            self.mimic_label_image_icon.config(image=self.image_add_icon)
-            self.mimic_label_image_icon.image = self.image_add_icon
-        # otherwise just show a prohibition signal that means the area where the cursor is actually in,
-        # the user can't drop the label
-        else:
-            self.mimic_label_image_icon.config(image=self.image_prohibition_signal)
-            self.mimic_label_image_icon.image = self.image_prohibition_signal
+        # try to draw every move in the window, otherwise just pass the error (for example in the case the mouse got dragged outside the window)
+        try:
+            # if the cursor is on top of these frame that correspond to the 3 rotors,
+            # show the add image that means that the user can drop the label on them
+            if target.winfo_parent() == self.first_rotor_frame_name or target.winfo_parent() == self.second_rotor_frame_name \
+                    or target.winfo_parent() == self.third_rotor_frame_name:
+                self.mimic_label_image_icon.config(image=self.image_add_icon)
+                self.mimic_label_image_icon.image = self.image_add_icon
+            # otherwise just show a prohibition signal that means the area where the cursor is actually in,
+            # the user can't drop the label
+            else:
+                self.mimic_label_image_icon.config(image=self.image_prohibition_signal)
+                self.mimic_label_image_icon.image = self.image_prohibition_signal
 
-        # move the image icon near the mimic label, precisely in the bottom right
-        self.mimic_label_image_icon.place(x=self.root.winfo_pointerx() - self.root.winfo_rootx() +
-                                          self.mimic_label_drag_effect.winfo_width() / 2 - 5,
-                                          y=self.root.winfo_pointery() - self.root.winfo_rooty() -
-                                          self.mimic_label_drag_effect.winfo_height() / 2)
+            # move the image icon near the mimic label, precisely in the bottom right
+            self.mimic_label_image_icon.place(x=self.root.winfo_pointerx() - self.root.winfo_rootx() +
+                                                self.mimic_label_drag_effect.winfo_width() / 2 - 5,
+                                              y=self.root.winfo_pointery() - self.root.winfo_rooty() -
+                                                self.mimic_label_drag_effect.winfo_height() / 2)
 
-        # as long as the mouse is moving and the left click is pressed,
-        # keep moving the mimic label position under the cursor
-        self.mimic_label_drag_effect.place(x=self.root.winfo_pointerx() - self.root.winfo_rootx() -
-                                           self.mimic_label_drag_effect.winfo_width() / 2 + 5,
-                                           y=self.root.winfo_pointery() - self.root.winfo_rooty() -
-                                           self.mimic_label_drag_effect.winfo_height() - 5)
+            # as long as the mouse is moving and the left click is pressed,
+            # keep moving the mimic label position under the cursor
+            self.mimic_label_drag_effect.place(x=self.root.winfo_pointerx() - self.root.winfo_rootx() -
+                                                 self.mimic_label_drag_effect.winfo_width() / 2 + 5,
+                                               y=self.root.winfo_pointery() - self.root.winfo_rooty() -
+                                                 self.mimic_label_drag_effect.winfo_height() - 5)
+        except:
+            pass
         pass
 
     def on_drop(self, event):

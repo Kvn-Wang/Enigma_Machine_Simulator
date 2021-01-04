@@ -89,6 +89,6 @@ class KeyBoardLayout:
     def get_absolute_y_keyboard(self):
         return self.frame.winfo_rooty()
 
-    # return the y value of the center of the keyboard
+    # return the y value of the center of the keyboard (plus a constant just to better center the widget)
     def get_keyboard_center_y(self):
-        return self.frame.winfo_rooty() - 35
+        return self.frame.winfo_y() + 20
